@@ -19,8 +19,15 @@ jobs:
 
     - name: Install dependencies
       run: |
+        sudo apt-get update
         sudo apt-get install -y ffmpeg
-        pip install edge-tts moviepy requests google-auth-oauthlib google-api-python-client pillow
+        pip install --upgrade pip
+        pip install edge-tts
+        pip install moviepy==1.0.3
+        pip install requests
+        pip install google-auth-oauthlib
+        pip install google-api-python-client
+        pip install pillow
 
     - name: Run script
       env:
